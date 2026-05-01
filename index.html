@@ -20,7 +20,7 @@
             background-color: var(--muji-bg);
             color: var(--muji-text);
             line-height: 1.6;
-            scroll-behavior: smooth; /* 让点击 Info 时的滚动变平滑 */
+            scroll-behavior: smooth; 
             -webkit-font-smoothing: antialiased;
         }
 
@@ -53,16 +53,14 @@
             color: white;
         }
 
-        /* Info 区域特定样式 */
         #info-section {
-            background-color: #FFFFFF; /* Info 区稍作区分，用纯白 */
+            background-color: #FFFFFF; 
             border-top: 1px solid var(--muji-border);
         }
     </style>
 </head>
 <body class="selection:bg-gray-200">
 
-    <!-- 导航栏：已删除 Archive -->
     <nav class="px-10 py-12 flex flex-col md:flex-row justify-between items-baseline gap-4">
         <div>
             <h1 class="text-2xl font-light tracking-[0.2em]">壁紙一覧</h1>
@@ -70,18 +68,15 @@
         </div>
         <div class="flex gap-8 text-xs tracking-widest text-[#7F8389]">
             <a href="#" class="hover:text-black transition">HOME</a>
-            <!-- 仅保留 Info 并指向下方的 ID -->
             <a href="#info-section" class="hover:text-black transition uppercase">Info</a>
         </div>
     </nav>
 
     <div class="px-10"><div class="muji-line"></div></div>
 
-    <!-- 壁纸展示区 -->
     <main class="p-10 min-h-[60vh]">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             
-            <!-- 壁纸卡片示例 -->
             <div class="wallpaper-item flex flex-col gap-4">
                 <div class="img-container bg-white p-2">
                     <img src="pic/KeepItSimple_Phone.png" 
@@ -96,7 +91,6 @@
                 </div>
             </div>
 
-            <!-- 壁纸卡片示例 2 -->
             <div class="wallpaper-item flex flex-col gap-4">
                 <div class="img-container bg-white p-2">
                     <img src="pic/KeepItSimple_Laptop.png" 
@@ -113,7 +107,6 @@
         </div>
     </main>
 
-    <!-- Info 页面区域 -->
     <section id="info-section" class="mt-20 px-10 py-24">
         <div class="max-w-2xl mx-auto">
             <h2 class="text-sm tracking-[0.3em] font-light mb-12 text-center uppercase">Information</h2>
@@ -137,14 +130,12 @@
         </div>
     </section>
 
-    <!-- 页脚 -->
     <footer class="p-10 text-center border-t border-[#E0E0E0]">
         <p class="text-[10px] tracking-widest text-gray-400 uppercase">
             Copyright © 2026 130
         </p>
     </footer>
-
-    <!-- 下载脚本 -->
+    
     <script>
         document.querySelectorAll('.download-trigger').forEach(button => {
             button.addEventListener('click', async function() {
