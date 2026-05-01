@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>130 | Wallpaper Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400&family=Inter:wght@300;400&display=swap');
+
+        :root {
+            --muji-bg: #F5F5F3;
+            --muji-text: #333333;
+            --muji-border: #E0E0E0;
+            --muji-accent: #7F8389;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            background-color: var(--muji-bg);
+            color: var(--muji-text);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* 让点击 Info 时的滚动变平滑 */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .muji-line {
+            height: 1px;
+            background-color: var(--muji-border);
+            width: 100%;
+        }
+
+        .img-container {
+            border: 1px solid var(--muji-border);
+            transition: opacity 0.3s ease;
+        }
+
+        .img-container:hover {
+            opacity: 0.85;
+        }
+
+        .btn-download {
+            border: 1px solid var(--muji-text);
+            padding: 4px 12px;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background-color: var(--muji-text);
+            color: white;
+        }
+
+        /* Info 区域特定样式 */
+        #info-section {
+            background-color: #FFFFFF; /* Info 区稍作区分，用纯白 */
+            border-top: 1px solid var(--muji-border);
+        }
+    </style>
+</head>
+<body class="selection:bg-gray-200">
+
+    <!-- 导航栏：已删除 Archive -->
+    <nav class="px-10 py-12 flex flex-col md:flex-row justify-between items-baseline gap-4">
+        <div>
+            <h1 class="text-2xl font-light tracking-[0.2em]">壁紙一覧</h1>
+            <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-widest">Wallpaper Collection</p>
+        </div>
+        <div class="flex gap-8 text-xs tracking-widest text-[#7F8389]">
+            <a href="#" class="hover:text-black transition">HOME</a>
+            <!-- 仅保留 Info 并指向下方的 ID -->
+            <a href="#info-section" class="hover:text-black transition uppercase">Info</a>
+        </div>
+    </nav>
+
+    <div class="px-10"><div class="muji-line"></div></div>
+
+    <!-- 壁纸展示区 -->
+    <main class="p-10 min-h-[60vh]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            
+            <!-- 壁纸卡片示例 -->
+            <div class="wallpaper-item flex flex-col gap-4">
+                <div class="img-container bg-white p-2">
+                    <img src="pic/KeepItSimple_Phone.png" 
+                         alt="Wallpaper" class="wallpaper-img w-full grayscale-[20%]">
+                </div>
+                <div class="flex justify-between items-end">
+                    <div>
+                        <p class="text-xs font-light">Keep It Simple | 保持简单</p>
+                        <p class="text-[10px] text-gray-400">High Resolution | 1080 x 2400</p>
+                    </div>
+                    <button class="btn-download download-trigger">保存</button>
+                </div>
+            </div>
+
+            <!-- 壁纸卡片示例 2 -->
+            <div class="wallpaper-item flex flex-col gap-4">
+                <div class="img-container bg-white p-2">
+                    <img src="pic/KeepItSimple_Laptop.png" 
+                         alt="Wallpaper" class="wallpaper-img w-full grayscale-[20%]">
+                </div>
+                <div class="flex justify-between items-end">
+                    <div>
+                        <p class="text-xs font-light">Keep It Simple | 保持简单</p>
+                        <p class="text-[10px] text-gray-400">High Resolution | 1980 x 1080</p>
+                    </div>
+                    <button class="btn-download download-trigger">保存</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Info 页面区域 -->
+    <section id="info-section" class="mt-20 px-10 py-24">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-sm tracking-[0.3em] font-light mb-12 text-center uppercase">Information</h2>
+            
+            <div class="space-y-10 text-xs font-light leading-loose tracking-wide">
+                <div>
+                    <p class="text-gray-400 mb-2 uppercase tracking-widest">[ Concept ]</p>
+                    <p>设计不仅是视觉的堆砌，更是空间的留白。这个网站展示了我对极简主义和无印良品美学的理解。每一张壁纸都致力于通过简单的线条与色块，为您的桌面带去一份宁静。</p>
+                </div>
+
+                <div>
+                    <p class="text-gray-400 mb-2 uppercase tracking-widest">[ Usage Policy ]</p>
+                    <p>本站所有壁纸均可免费下载用于个人设备。严禁任何形式的商业用途、二次销售或未经许可的平台转分发。</p>
+                </div>
+
+                <div>
+                    <p class="text-gray-400 mb-2 uppercase tracking-widest">[ Contact ]</p>
+                    <p>如果您有任何建议或合作意向，欢迎联系：-</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="p-10 text-center border-t border-[#E0E0E0]">
+        <p class="text-[10px] tracking-widest text-gray-400 uppercase">
+            Copyright © 2026 130
+        </p>
+    </footer>
+
+    <!-- 下载脚本 -->
+    <script>
+        document.querySelectorAll('.download-trigger').forEach(button => {
+            button.addEventListener('click', async function() {
+                const item = this.closest('.wallpaper-item');
+                const img = item.querySelector('.wallpaper-img');
+                const imageUrl = img.src;
+                const fileName = item.querySelector('p').innerText || 'wallpaper';
+
+                try {
+                    const response = await fetch(imageUrl);
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = fileName.replace(/\s+/g, '_') + '.jpg';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                } catch (error) {
+                    window.open(imageUrl, '_blank');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
